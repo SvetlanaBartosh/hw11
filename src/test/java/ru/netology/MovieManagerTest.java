@@ -62,7 +62,7 @@ public class MovieManagerTest {
 
     @Test
     public void lastMovie4() {
-        MovieManager manager = new MovieManager();
+        MovieManager manager = new MovieManager(5);
 
         manager.addMovie("Бладшот");
         manager.addMovie("Вперёд");
@@ -91,7 +91,7 @@ public class MovieManagerTest {
 
     @Test
     public void lastMovie7() {
-        MovieManager manager = new MovieManager(7);
+        MovieManager manager = new MovieManager();
 
         manager.addMovie("Бладшот");
         manager.addMovie("Вперёд");
@@ -101,7 +101,7 @@ public class MovieManagerTest {
         manager.addMovie("Человек-невидимка");
         manager.addMovie("Тролли");
 
-        String[] expected = {"Тролли", "Человек-невидимка", "Отель Белград", "Номер один", "Джентельмены", "Вперёд", "Бладшот"};
+        String[] expected = {"Тролли", "Человек-невидимка", "Отель Белград", "Номер один", "Джентельмены"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
